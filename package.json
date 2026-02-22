@@ -2,6 +2,7 @@
   "name": "openmaqs-typescript",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "description": "Monorepo for the OpenMAQS TypeScript test automation framework",
   "workspaces": [
     "packages/*"

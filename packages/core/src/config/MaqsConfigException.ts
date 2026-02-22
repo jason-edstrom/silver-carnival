@@ -8,8 +8,6 @@ export class MaqsConfigException extends Error {
     if (cause !== undefined) {
       this.cause = cause;
     }
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, MaqsConfigException);
-    }
+    Error.captureStackTrace(this, MaqsConfigException);
   }
 }

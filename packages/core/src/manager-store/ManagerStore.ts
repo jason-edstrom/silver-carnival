@@ -70,7 +70,7 @@ export class ManagerStore implements Iterable<[string, DriverManager<unknown>]> 
     );
     this.store.clear();
     const firstRejection = results.find((r) => r.status === 'rejected');
-    if (firstRejection && firstRejection.status === 'rejected') {
+    if (firstRejection?.status === 'rejected') {
       throw firstRejection.reason;
     }
   }

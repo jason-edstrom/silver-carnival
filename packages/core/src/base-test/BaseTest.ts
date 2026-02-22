@@ -1,4 +1,4 @@
-import { BaseTestObject } from '../test-object/BaseTestObject.js';
+import type { BaseTestObject } from '../test-object/BaseTestObject.js';
 import type { Logger } from '../logging/Logger.js';
 import { createLogger } from '../logging/LoggerFactory.js';
 import { MaqsConfig } from '../config/MaqsConfig.js';
@@ -34,12 +34,12 @@ export abstract class BaseTest {
   }
 
   async teardown(): Promise<void> {
-    let caughtError: unknown;
+    let caughtError: Error | undefined;
     try {
       await this.afterTest();
       this.softAssert.failTestIfAssertFailed();
     } catch (err) {
-      caughtError = err;
+      caughtError = err instanceof Error ? err : new Error(String(err));
     } finally {
       this.log.logMessage(LogLevel.Information, `----- END: ${this._testName} -----`);
       await this._testObject?.close();
@@ -104,7 +104,7 @@ export abstract class BaseTest {
       | 'text'
       | 'none';
     const levelStr = config.getValue('LogLevel', 'Information') ?? 'Information';
-    const level = LogLevel[levelStr as keyof typeof LogLevel] ?? LogLevel.Information;
+    const level = (LogLevel[levelStr as keyof typeof LogLevel] as LogLevel | undefined) ?? LogLevel.Information;
     return createLogger({ logType, logName: testName ?? this._testName, level });
   }
 }

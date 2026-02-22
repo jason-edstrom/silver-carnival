@@ -13,8 +13,6 @@ export class SoftAssertException extends Error {
     super(message);
     this.name = 'SoftAssertException';
     this.failures = Object.freeze([...failures]);
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, SoftAssertException);
-    }
+    Error.captureStackTrace(this, SoftAssertException);
   }
 }

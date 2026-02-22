@@ -33,8 +33,9 @@ export function createMaqsContext<T extends BaseTestObject>(
 ): MaqsContext<T> {
   let _current: T | undefined;
 
-  hooks.beforeEach(async () => {
+  hooks.beforeEach(() => {
     _current = createTestObject();
+    return Promise.resolve();
   });
 
   hooks.afterEach(async () => {

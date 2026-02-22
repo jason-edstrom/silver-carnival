@@ -33,7 +33,8 @@ export class ConsoleLogger extends Logger {
         return '\x1b[35m'; // magenta
       case LogLevel.Action:
         return '\x1b[90m'; // dark gray
-      default:
+      case LogLevel.Generic:
+      case LogLevel.Suspended:
         return '';
     }
   }

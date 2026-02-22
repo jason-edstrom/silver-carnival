@@ -1,5 +1,5 @@
 import { BaseTest } from './BaseTest.js';
-import { BaseTestObject } from '../test-object/BaseTestObject.js';
+import type { BaseTestObject } from '../test-object/BaseTestObject.js';
 
 /**
  * Generic extension point for technology-specific packages.

@@ -84,7 +84,7 @@ export class MaqsConfig {
   /** Walk up from cwd to find maqs.config.json (supports monorepo layouts). */
   private static findConfigFile(): string | undefined {
     let dir = process.cwd();
-    while (true) {
+    for (;;) {
       const candidate = path.join(dir, 'maqs.config.json');
       if (fs.existsSync(candidate)) return candidate;
       const parent = path.dirname(dir);

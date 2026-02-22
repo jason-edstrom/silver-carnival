@@ -1,5 +1,5 @@
 import { LogLevel } from './LogLevel.js';
-import { Logger } from './Logger.js';
+import type { Logger } from './Logger.js';
 import { ConsoleLogger } from './ConsoleLogger.js';
 import { FileLogger } from './FileLogger.js';
 import type { FileLoggerOptions } from './FileLogger.js';

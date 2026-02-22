@@ -1,0 +1,32 @@
+{
+  "name": "openmaqs-typescript",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo for the OpenMAQS TypeScript test automation framework",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "vitest run --workspace vitest.workspace.ts",
+    "test:watch": "vitest watch --workspace vitest.workspace.ts",
+    "lint": "eslint \"packages/*/src/**/*.ts\"",
+    "format": "prettier --write \"packages/*/src/**/*.ts\" \"packages/*/tests/**/*.ts\"",
+    "format:check": "prettier --check \"packages/*/src/**/*.ts\" \"packages/*/tests/**/*.ts\"",
+    "docs": "typedoc --entryPointStrategy packages --entryPoints packages/*/src/index.ts --out docs",
+    "clean": "npm run clean --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "typedoc": "^0.25.12",
+    "typescript": "^5.4.0",
+    "vitest": "^1.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

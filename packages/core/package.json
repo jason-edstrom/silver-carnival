@@ -1,0 +1,66 @@
+{
+  "name": "@openmaqs-typescript/core",
+  "version": "0.1.0",
+  "description": "Core package for OpenMAQS TypeScript — base test classes, logging, config, soft assert",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./adapters/jest": {
+      "types": "./dist/types/adapters/jest.d.ts",
+      "import": "./dist/esm/adapters/jest.js",
+      "require": "./dist/cjs/adapters/jest.cjs"
+    },
+    "./adapters/vitest": {
+      "types": "./dist/types/adapters/vitest.d.ts",
+      "import": "./dist/esm/adapters/vitest.js",
+      "require": "./dist/cjs/adapters/vitest.cjs"
+    },
+    "./adapters/mocha": {
+      "types": "./dist/types/adapters/mocha.d.ts",
+      "import": "./dist/esm/adapters/mocha.js",
+      "require": "./dist/cjs/adapters/mocha.cjs"
+    }
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^1.5.0",
+    "tsup": "^8.0.0",
+    "vitest": "^1.5.0"
+  },
+  "peerDependencies": {
+    "jest": ">=29",
+    "mocha": ">=10",
+    "vitest": ">=1"
+  },
+  "peerDependenciesMeta": {
+    "jest": { "optional": true },
+    "mocha": { "optional": true },
+    "vitest": { "optional": true }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": ["maqs", "openmaqs", "test-automation", "typescript", "testing"],
+  "license": "MIT"
+}

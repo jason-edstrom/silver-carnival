@@ -35,8 +35,5 @@ export function useMaqsPlaywright(config?: PlaywrightConfig): MaqsContext<Playwr
     );
   }
 
-  return createPlaywrightContext(
-    { beforeEach: g.beforeEach, afterEach: g.afterEach },
-    config,
-  );
+  return createPlaywrightContext({ beforeEach: g.beforeEach, afterEach: g.afterEach }, config);
 }

@@ -23,11 +23,7 @@ function makeMockLogger(): Logger {
 class TestDriverManager extends BaseDriverManager<string> {
   private readonly disposeStub: () => Promise<void>;
 
-  constructor(
-    logger: Logger,
-    factory?: () => Promise<string>,
-    disposeStub?: () => Promise<void>,
-  ) {
+  constructor(logger: Logger, factory?: () => Promise<string>, disposeStub?: () => Promise<void>) {
     super(logger, factory);
     this.disposeStub = disposeStub ?? (async () => {});
   }

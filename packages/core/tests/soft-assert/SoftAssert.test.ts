@@ -47,7 +47,13 @@ describe('SoftAssert', () => {
   });
 
   it('assert() prepends failMessage to failure', () => {
-    sa.assert('myAssert', () => { throw new Error('boom'); }, 'Context');
+    sa.assert(
+      'myAssert',
+      () => {
+        throw new Error('boom');
+      },
+      'Context',
+    );
     expect(sa.didSoftAssertsFail()).toBe(true);
   });
 
@@ -72,13 +78,19 @@ describe('SoftAssert', () => {
   });
 
   it('failTestIfAssertFailed() throws SoftAssertException when failures exist', () => {
-    sa.assert('fail', () => { throw new Error('x'); });
+    sa.assert('fail', () => {
+      throw new Error('x');
+    });
     expect(() => sa.failTestIfAssertFailed()).toThrowError(SoftAssertException);
   });
 
   it('SoftAssertException contains all failure messages', () => {
-    sa.assert('a', () => { throw new Error('fail a'); });
-    sa.assert('b', () => { throw new Error('fail b'); });
+    sa.assert('a', () => {
+      throw new Error('fail a');
+    });
+    sa.assert('b', () => {
+      throw new Error('fail b');
+    });
     try {
       sa.failTestIfAssertFailed();
     } catch (err) {
@@ -90,7 +102,11 @@ describe('SoftAssert', () => {
   it('didUserCheck() returns true after failTestIfAssertFailed()', () => {
     sa.assert('ok', () => {});
     expect(sa.didUserCheck()).toBe(false);
-    try { sa.failTestIfAssertFailed(); } catch { /* expected */ }
+    try {
+      sa.failTestIfAssertFailed();
+    } catch {
+      /* expected */
+    }
     expect(sa.didUserCheck()).toBe(true);
   });
 
@@ -110,7 +126,15 @@ describe('SoftAssert', () => {
   });
 
   it('assertThrows() passes when fn throws the expected error type', () => {
-    expect(sa.assertThrows('throws', () => { throw new TypeError('oops'); }, TypeError)).toBe(true);
+    expect(
+      sa.assertThrows(
+        'throws',
+        () => {
+          throw new TypeError('oops');
+        },
+        TypeError,
+      ),
+    ).toBe(true);
   });
 
   it('assertThrows() fails when fn does not throw', () => {
@@ -118,12 +142,22 @@ describe('SoftAssert', () => {
   });
 
   it('assertThrows() fails when fn throws the wrong error type', () => {
-    expect(sa.assertThrows('wrongType', () => { throw new RangeError('x'); }, TypeError)).toBe(false);
+    expect(
+      sa.assertThrows(
+        'wrongType',
+        () => {
+          throw new RangeError('x');
+        },
+        TypeError,
+      ),
+    ).toBe(false);
   });
 
   it('numberOfAsserts is the sum of pass + fail', () => {
     sa.assert('a', () => {});
-    sa.assert('b', () => { throw new Error('x'); });
+    sa.assert('b', () => {
+      throw new Error('x');
+    });
     expect(sa.numberOfAsserts).toBe(2);
   });
 

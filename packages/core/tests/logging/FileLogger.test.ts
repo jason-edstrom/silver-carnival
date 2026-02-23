@@ -38,7 +38,11 @@ describe('FileLogger', () => {
   });
 
   it('suppresses messages below the threshold (file never created)', () => {
-    const logger = new FileLogger({ logFolder: tmpDir, logName: 'test.log', level: LogLevel.Warning });
+    const logger = new FileLogger({
+      logFolder: tmpDir,
+      logName: 'test.log',
+      level: LogLevel.Warning,
+    });
     logger.logInfo('should be filtered');
     // appendFileSync is never called when all messages are suppressed,
     // so the file itself should not exist.

@@ -77,9 +77,7 @@ export abstract class BaseTest {
 
   get testObject(): BaseTestObject {
     if (!this._testObject) {
-      throw new Error(
-        `testObject accessed before setup() was called on ${this.constructor.name}`,
-      );
+      throw new Error(`testObject accessed before setup() was called on ${this.constructor.name}`);
     }
     return this._testObject;
   }
@@ -104,7 +102,8 @@ export abstract class BaseTest {
       | 'text'
       | 'none';
     const levelStr = config.getValue('LogLevel', 'Information') ?? 'Information';
-    const level = (LogLevel[levelStr as keyof typeof LogLevel] as LogLevel | undefined) ?? LogLevel.Information;
+    const level =
+      (LogLevel[levelStr as keyof typeof LogLevel] as LogLevel | undefined) ?? LogLevel.Information;
     return createLogger({ logType, logName: testName ?? this._testName, level });
   }
 }

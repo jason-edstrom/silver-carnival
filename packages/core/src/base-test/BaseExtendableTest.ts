@@ -21,9 +21,7 @@ export abstract class BaseExtendableTest<TObject extends BaseTestObject> extends
   /** Typed accessor — returns TObject instead of BaseTestObject. */
   override get testObject(): TObject {
     if (!this._specificTestObject) {
-      throw new Error(
-        `testObject accessed before setup() was called on ${this.constructor.name}`,
-      );
+      throw new Error(`testObject accessed before setup() was called on ${this.constructor.name}`);
     }
     return this._specificTestObject;
   }

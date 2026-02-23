@@ -65,9 +65,7 @@ export class ManagerStore implements Iterable<[string, DriverManager<unknown>]> 
    * Uses Promise.allSettled so a partial failure doesn't block other drivers from closing.
    */
   async closeAll(): Promise<void> {
-    const results = await Promise.allSettled(
-      [...this.store.values()].map((m) => m.close()),
-    );
+    const results = await Promise.allSettled([...this.store.values()].map((m) => m.close()));
     this.store.clear();
     const firstRejection = results.find((r) => r.status === 'rejected');
     if (firstRejection?.status === 'rejected') {

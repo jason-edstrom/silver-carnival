@@ -16,7 +16,11 @@ describe('MaqsConfig', () => {
   afterEach(() => {
     fs.rmSync(tmpDir, { recursive: true, force: true });
     for (const key of Object.keys(process.env)) {
-      if (key.startsWith('MAQS_TEST_') || key.startsWith('MAQS_SELENIUM_') || key === 'MAQS_MYKEY') {
+      if (
+        key.startsWith('MAQS_TEST_') ||
+        key.startsWith('MAQS_SELENIUM_') ||
+        key === 'MAQS_MYKEY'
+      ) {
         delete process.env[key];
       }
     }

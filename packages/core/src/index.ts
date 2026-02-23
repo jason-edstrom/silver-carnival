@@ -32,5 +32,6 @@ export { BaseTestObject } from './test-object/BaseTestObject.js';
 export { BaseTest } from './base-test/BaseTest.js';
 export { BaseExtendableTest } from './base-test/BaseExtendableTest.js';
 
-// useMaqs context type (shared across all adapters)
-export type { MaqsContext } from './adapters/useMaqsCore.js';
+// useMaqs shared factory + types (used by technology packages to build their own adapters)
+export { createMaqsContext } from './adapters/useMaqsCore.js';
+export type { TestHooks, MaqsContext } from './adapters/useMaqsCore.js';

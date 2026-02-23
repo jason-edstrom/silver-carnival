@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: [18, 20, 22]
+        node-version: ["18.20", 20, 22]
 
     steps:
       - uses: actions/checkout@v4
@@ -25,6 +26,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Build core (required for typed ESLint rules in downstream packages)
+        run: npm run build --workspace packages/core
 
       - name: Lint
         run: npm run lint

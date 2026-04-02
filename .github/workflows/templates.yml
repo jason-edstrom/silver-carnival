@@ -1,0 +1,57 @@
+name: Template Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "templates/**"
+      - "packages/**"
+      - ".github/workflows/templates.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "templates/**"
+      - "packages/**"
+      - ".github/workflows/templates.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: ${{ matrix.template }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        template: [core-vitest, playwright-vitest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Install template dependencies
+        run: npm install
+        working-directory: templates/${{ matrix.template }}
+
+      - name: Install Playwright browsers
+        if: matrix.template == 'playwright-vitest'
+        run: npx playwright install chromium --with-deps
+        working-directory: templates/${{ matrix.template }}
+
+      - name: Type check
+        run: npx tsc --noEmit
+        working-directory: templates/${{ matrix.template }}
+
+      - name: Test
+        run: npm test
+        working-directory: templates/${{ matrix.template }}

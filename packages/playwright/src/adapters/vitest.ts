@@ -1,5 +1,5 @@
 import { beforeEach, afterEach } from 'vitest';
-import type { MaqsContext } from '@openmaqs-typescript/core';
+import type { MaqsContext } from '@jason-edstrom/core';
 import type { PlaywrightConfig } from '../config/PlaywrightConfig.js';
 import type { PlaywrightTestObject } from '../test-object/PlaywrightTestObject.js';
 import { createPlaywrightContext } from './useMaqsPlaywright.js';
@@ -11,7 +11,7 @@ export type { MaqsContext };
  * Call inside describe() — beforeEach/afterEach are registered automatically.
  *
  * @example
- * import { useMaqsPlaywright } from '@openmaqs-typescript/playwright/adapters/vitest';
+ * import { useMaqsPlaywright } from '@jason-edstrom/playwright/adapters/vitest';
  *
  * describe('My Playwright Suite', () => {
  *   const ctx = useMaqsPlaywright();

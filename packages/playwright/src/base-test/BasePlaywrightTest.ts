@@ -1,4 +1,4 @@
-import { BaseExtendableTest } from '@openmaqs-typescript/core';
+import { BaseExtendableTest } from '@jason-edstrom/core';
 import { PlaywrightTestObject } from '../test-object/PlaywrightTestObject.js';
 
 /**

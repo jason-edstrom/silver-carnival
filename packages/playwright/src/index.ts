@@ -11,4 +11,4 @@ export { PlaywrightTestObject } from './test-object/PlaywrightTestObject.js';
 export { BasePlaywrightTest } from './base-test/BasePlaywrightTest.js';
 
 // useMaqs context type (convenience re-export for consumers)
-export type { MaqsContext } from '@openmaqs-typescript/core';
+export type { MaqsContext } from '@jason-edstrom/core';

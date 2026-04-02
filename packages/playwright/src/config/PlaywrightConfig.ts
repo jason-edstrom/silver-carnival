@@ -1,4 +1,4 @@
-import { MaqsConfig } from '@openmaqs-typescript/core';
+import { MaqsConfig } from '@jason-edstrom/core';
 
 /**
  * Typed configuration wrapper for the Playwright section of maqs.config.json.

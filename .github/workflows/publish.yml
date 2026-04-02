@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com
-          scope: '@openmaqs-typescript'
+          scope: '@jason-edstrom'
           cache: npm
 
       - name: Install dependencies

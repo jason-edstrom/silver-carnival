@@ -1,5 +1,5 @@
 {
-  "name": "@openmaqs-typescript/playwright",
+  "name": "@jason-edstrom/playwright",
   "version": "0.1.0",
   "description": "Playwright package for OpenMAQS TypeScript — browser driver, test object, and base test classes",
   "type": "module",
@@ -42,7 +42,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@openmaqs-typescript/core": "*"
+    "@jason-edstrom/core": "*"
   },
   "peerDependencies": {
     "playwright": ">=1.40.0",

@@ -1,5 +1,5 @@
 {
-  "name": "@openmaqs-typescript/core",
+  "name": "@jason-edstrom/core",
   "version": "0.1.0",
   "description": "Core package for OpenMAQS TypeScript — base test classes, logging, config, soft assert",
   "type": "module",

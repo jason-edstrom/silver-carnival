@@ -10,6 +10,7 @@ export default tseslint.config(
     ignores: [
       '**/dist/**',
       '**/node_modules/**',
+      'templates/**',
       '**/*.cjs',
       '**/*.mjs',
       '*.js',        // root-level JS config files (eslint.config.js etc.)

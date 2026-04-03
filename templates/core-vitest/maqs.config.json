@@ -1,0 +1,6 @@
+{
+  "MyApp": {
+    "BaseUrl": "https://myapp.example.com",
+    "Timeout": "5000"
+  }
+}

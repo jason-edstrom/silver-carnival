@@ -1,0 +1,17 @@
+{
+  "name": "my-maqs-tests",
+  "version": "1.0.0",
+  "description": "Test suite using OpenMAQS TypeScript core",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@jason-edstrom/core": "file:../../packages/core"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^4.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "Playwright": {
+    "Browser": "chromium",
+    "Headless": "true",
+    "Timeout": "30000",
+    "BaseUrl": "https://openmaqs.github.io/TestingSite/Automation/"
+  }
+}

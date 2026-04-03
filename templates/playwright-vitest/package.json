@@ -1,0 +1,19 @@
+{
+  "name": "my-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright test suite using OpenMAQS TypeScript",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@jason-edstrom/core": "file:../../packages/core",
+    "@jason-edstrom/playwright": "file:../../packages/playwright"
+  },
+  "devDependencies": {
+    "playwright": "^1.51.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.0.0"
+  }
+}

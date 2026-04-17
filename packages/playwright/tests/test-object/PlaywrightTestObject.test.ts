@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { Browser, BrowserContext, Page } from 'playwright';
 import { chromium } from 'playwright';
-import { ConsoleLogger, LogLevel } from '@jason-edstrom/core';
+import { ConsoleLogger, LogLevel } from '@openmaqs/core';
 import { PlaywrightTestObject } from '../../src/test-object/PlaywrightTestObject.js';
 import { PlaywrightDriverManager } from '../../src/driver-manager/PlaywrightDriverManager.js';
 

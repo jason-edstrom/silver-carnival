@@ -1,7 +1,7 @@
 import { chromium, firefox, webkit } from 'playwright';
 import type { Browser, BrowserContext, Page } from 'playwright';
-import { BaseDriverManager } from '@jason-edstrom/core';
-import type { Logger } from '@jason-edstrom/core';
+import { BaseDriverManager } from '@openmaqs/core';
+import type { Logger } from '@openmaqs/core';
 import { PlaywrightConfig } from '../config/PlaywrightConfig.js';
 
 /**

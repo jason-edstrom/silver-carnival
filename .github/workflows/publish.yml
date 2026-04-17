@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
 
     steps:
       - uses: actions/checkout@v4
@@ -18,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com
-          scope: '@jason-edstrom'
+          registry-url: https://registry.npmjs.org
+          scope: '@openmaqs'
           cache: npm
 
       - name: Install dependencies
@@ -31,4 +30,4 @@ jobs:
       - name: Publish packages
         run: npm publish --workspaces
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

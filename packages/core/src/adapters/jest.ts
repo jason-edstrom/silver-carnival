@@ -11,8 +11,8 @@ export type { MaqsContext };
  * Jest's beforeEach/afterEach are globals, so no import is required.
  *
  * @example
- * import { useMaqs } from '@openmaqs-typescript/core/adapters/jest';
- * import { BaseTestObject, createConsoleLogger } from '@openmaqs-typescript/core';
+ * import { useMaqs } from '@openmaqs/core/adapters/jest';
+ * import { BaseTestObject, createConsoleLogger } from '@openmaqs/core';
  *
  * describe('My Suite', () => {
  *   const ctx = useMaqs(() => new BaseTestObject(createConsoleLogger()));

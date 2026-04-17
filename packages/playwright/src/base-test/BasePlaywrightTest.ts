@@ -1,4 +1,4 @@
-import { BaseExtendableTest } from '@jason-edstrom/core';
+import { BaseExtendableTest } from '@openmaqs/core';
 import { PlaywrightTestObject } from '../test-object/PlaywrightTestObject.js';
 
 /**

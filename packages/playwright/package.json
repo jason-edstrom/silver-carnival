@@ -1,5 +1,5 @@
 {
-  "name": "@jason-edstrom/playwright",
+  "name": "@openmaqs/playwright",
   "version": "0.1.0",
   "description": "Playwright package for OpenMAQS TypeScript — browser driver, test object, and base test classes",
   "type": "module",
@@ -42,7 +42,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@jason-edstrom/core": "*"
+    "@openmaqs/core": "*"
   },
   "peerDependencies": {
     "playwright": ">=1.40.0",
@@ -64,7 +64,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": ["maqs", "openmaqs", "test-automation", "typescript", "playwright", "testing"],
   "license": "MIT"

@@ -1,5 +1,5 @@
 {
-  "name": "@jason-edstrom/core",
+  "name": "@openmaqs/core",
   "version": "0.1.0",
   "description": "Core package for OpenMAQS TypeScript — base test classes, logging, config, soft assert",
   "type": "module",
@@ -60,7 +60,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": ["maqs", "openmaqs", "test-automation", "typescript", "testing"],
   "license": "MIT"

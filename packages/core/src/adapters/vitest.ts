@@ -10,8 +10,8 @@ export type { MaqsContext };
  * Call inside describe() — beforeEach/afterEach are registered automatically.
  *
  * @example
- * import { useMaqs } from '@openmaqs-typescript/core/adapters/vitest';
- * import { BaseTestObject, createConsoleLogger } from '@openmaqs-typescript/core';
+ * import { useMaqs } from '@openmaqs/core/adapters/vitest';
+ * import { BaseTestObject, createConsoleLogger } from '@openmaqs/core';
  *
  * describe('My Suite', () => {
  *   const ctx = useMaqs(() => new BaseTestObject(createConsoleLogger()));

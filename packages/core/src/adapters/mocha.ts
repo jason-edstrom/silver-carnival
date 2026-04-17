@@ -11,8 +11,8 @@ export type { MaqsContext };
  * Mocha's beforeEach/afterEach are globals, so no import is required.
  *
  * @example
- * import { useMaqs } from '@openmaqs-typescript/core/adapters/mocha';
- * import { BaseTestObject, createConsoleLogger } from '@openmaqs-typescript/core';
+ * import { useMaqs } from '@openmaqs/core/adapters/mocha';
+ * import { BaseTestObject, createConsoleLogger } from '@openmaqs/core';
  *
  * describe('My Suite', function () {
  *   const ctx = useMaqs(() => new BaseTestObject(createConsoleLogger()));

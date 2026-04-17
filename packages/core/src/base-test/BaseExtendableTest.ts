@@ -8,7 +8,7 @@ import type { BaseTestObject } from '../test-object/BaseTestObject.js';
  * (logger, softAssert, managerStore, config) are guaranteed present.
  *
  * @example
- * // In @openmaqs-typescript/selenium:
+ * // In @openmaqs/selenium:
  * class SeleniumTestObject extends BaseTestObject { ... }
  *
  * abstract class BaseSeleniumTest extends BaseExtendableTest<SeleniumTestObject> {

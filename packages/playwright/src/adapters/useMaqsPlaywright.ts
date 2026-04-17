@@ -1,5 +1,5 @@
-import { createMaqsContext, createConsoleLogger } from '@jason-edstrom/core';
-import type { TestHooks, MaqsContext } from '@jason-edstrom/core';
+import { createMaqsContext, createConsoleLogger } from '@openmaqs/core';
+import type { TestHooks, MaqsContext } from '@openmaqs/core';
 import type { PlaywrightConfig } from '../config/PlaywrightConfig.js';
 import { PlaywrightTestObject } from '../test-object/PlaywrightTestObject.js';
 

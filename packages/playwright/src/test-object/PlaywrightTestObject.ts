@@ -1,6 +1,6 @@
 import type { Page } from 'playwright';
-import { BaseTestObject } from '@jason-edstrom/core';
-import type { Logger, MaqsConfig } from '@jason-edstrom/core';
+import { BaseTestObject } from '@openmaqs/core';
+import type { Logger, MaqsConfig } from '@openmaqs/core';
 import type { PlaywrightConfig } from '../config/PlaywrightConfig.js';
 import { PlaywrightDriverManager } from '../driver-manager/PlaywrightDriverManager.js';
 

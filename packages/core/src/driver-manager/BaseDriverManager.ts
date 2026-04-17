@@ -10,7 +10,7 @@ import type { Logger } from '../logging/Logger.js';
  *   - driverDispose()  — cleans up the driver on close()
  *
  * @example
- * // In @openmaqs-typescript/selenium:
+ * // In @openmaqs/selenium:
  * class SeleniumDriverManager extends BaseDriverManager<WebDriver> {
  *   protected async createDriver(): Promise<WebDriver> { ... }
  *   protected async driverDispose(): Promise<void> { await this.driver?.quit(); }
